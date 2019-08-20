@@ -1,0 +1,75 @@
+
+sitemap poolhomie label="Pool Automation 2.0" icon="pool" {
+
+	Frame label="Steuerung" {
+			Switch  item=Pool_Controller_OperationMode_Mode label="Modus" 		icon="settings" 	mappings=[auto="Auto", manu="Manual", boost="Boost", timer="Timer"]
+
+			Text    item=Pool_Controller_PoolPump_Switch    label="Pumpe [%s]"  icon="pump" visibility=[Pool_Controller_OperationMode_Mode==auto, Pool_Controller_OperationMode_Mode==boost, Pool_Controller_OperationMode_Mode==timer]
+			Switch  item=Pool_Controller_PoolPump_Switch    label="Pumpe"       icon="pump" visibility=[Pool_Controller_OperationMode_Mode==manu]
+
+			Text    item=Pool_Controller_SolarPump_Switch   label="Solar [%s]"  icon="solarplant" visibility=[Pool_Controller_OperationMode_Mode==auto, Pool_Controller_OperationMode_Mode==boost, Pool_Controller_OperationMode_Mode==timer]
+			Switch  item=Pool_Controller_SolarPump_Switch   label="Solar"       icon="solarplant" visibility=[Pool_Controller_OperationMode_Mode==manu]
+	}
+
+	Frame label="aktuelle Temperaturen" {
+
+		Text item=Pool_Controller_PoolTemp_Temperature label="Wasser [%.1f °C]"     icon="temperature" valuecolor=[>30="orange",>20="green",<=20="blue"] {
+
+			//Text item=CurrentTemperature   label="Luft [%.1f °C]"   icon="temperature" valuecolor=[>25="orange",>15="green",<=15="blue"]
+			Text item=Pool_Controller_PoolTemp_Temperature  label="Wasser [%.1f °C]" icon="temperature" valuecolor=[>30="orange",>20="green",<=20="blue"]
+			Text item=Pool_Controller_SolarTemp_Temperature label="Solar [%.1f °C]"  icon="temperature" valuecolor=[>30="orange",>20="green",<=20="blue"]
+			//Text item=Sensor_ESP_Temperature label="ESP [%.1f °C]"  icon="temperature" valuecolor=[>30="orange",>20="green",<=20="blue"]
+
+			Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Temperature&period=4h" refresh=60000 visibility=[Chart_Intervall==0, Chart_Intervall==NULL]
+			Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Temperature&period=12h" refresh=60000 visibility=[Chart_Intervall==1]
+			Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Temperature&period=D" refresh=60000 visibility=[Chart_Intervall==2]
+			Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Temperature&period=3D" refresh=60000 visibility=[Chart_Intervall==3]
+		}
+
+	}
+
+	Frame label="Erweitert" {
+
+		Text label="Charts" icon="line" {
+
+			Frame label="Schaltzeiten" icon="switch"  {
+					Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Switch&period=4h" refresh=60000 visibility=[Chart_Intervall==0, Chart_Intervall==NULL]
+					Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Switch&period=12h" refresh=60000 visibility=[Chart_Intervall==1]
+					Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Switch&period=D" refresh=60000 visibility=[Chart_Intervall==2]
+					Image url="http://smarthome-pi.local:8080/rrdchart.png?groups=Chart_Pool_Controller_Switch&period=3D" refresh=60000 visibility=[Chart_Intervall==3]
+			}
+
+		}
+
+		Text label="Einstellungen" icon="settings" {
+
+			Frame label="Charts" {
+				Switch item=Chart_Intervall label="Zeitspanne" icon="time" mappings=[0="  4h ", 1=" 12h ", 2="1 Tag", 3="3 Tage"]
+			}
+			Frame label="Timer" {
+				Setpoint item=Pool_Controller_Pool_Valve_Start_H label="HH: ein [%.0f h]" icon="time" minValue=0 maxValue=23 step=1
+				Setpoint item=Pool_Controller_Pool_Valve_Start_M label="MM: ein [%1$02d m]"  minValue=0 maxValue=59 step=5
+
+				Setpoint item=Pool_Controller_Pool_Valve_Stop_H label="HH: aus [%.0f h]" icon="time" minValue=0 maxValue=23 step=1
+				Setpoint item=Pool_Controller_Pool_Valve_Stop_M label="MM: aus [%1$02d m]"  minValue=0 maxValue=59 step=5
+
+			}
+			Frame label="Konfiguration" {
+				Setpoint item=Pool_Controller_MaxPoolTemp label="max. Pool Temp. [%.0f °C]" icon="heating" minValue=0.0 maxValue=40.0 step=1
+				Setpoint item=Pool_Controller_MinSolarTemp label="min. Solar Temp. [%.0f °C]" icon="heating" minValue=0.0 maxValue=100.0 step=1
+				Setpoint item=Pool_Controller_Hysteresis label="Hysterese [%.1f K]" icon="line" minValue=0.0 maxValue=10.0 step=0.5
+			}
+			Frame label="System" {
+				Text item=Pool_Controller_uptime
+				Text item=Pool_Controller_signal label="WiFi Signalstärke [%d %%]"
+
+				Text item=Pool_Controller_fw_name
+				Text item=Pool_Controller_fw_version
+			}
+		}
+
+		Text item=Pool_Controller_Last_Update_DateTime     label="Controller updated [%1$tR %1$td.%1$tm.]" icon="time"
+
+	}
+
+}

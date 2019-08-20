@@ -1,0 +1,41 @@
+Bridge mqtt:broker:mosquitto "Mosquitto" [ host="127.0.0.1", port=1883, secure=false, clientID="openHAB2" ]
+{
+Thing topic pool-controller "Smart Pool Controller" @ "Garten" {
+			Channels:
+				//OPerationMode
+				Type string : operationMode 	"Modus"							[ stateTopic="homie/5ccf7fb97572/operation-mode/mode", commandTopic="homie/5ccf7fb97572/operation-mode/mode/set"]
+				//configs
+				Type number : maxPoolTemp 		"max. Pool Temp"		[ stateTopic="homie/5ccf7fb97572/operation-mode/pool-max-temp", commandTopic="homie/5ccf7fb97572/operation-mode/pool-max-temp/set"]
+				Type number : minSolarTemp 		"min. Solar Temp"		[ stateTopic="homie/5ccf7fb97572/operation-mode/solar-min-temp", commandTopic="homie/5ccf7fb97572/operation-mode/solar-min-temp/set"]
+				Type number : hysteresis	 		"Hysterese"					[ stateTopic="homie/5ccf7fb97572/operation-mode/hysteresis", commandTopic="homie/5ccf7fb97572/operation-mode/hysteresis/set"]
+
+				Type number : timerStartH	 		"Timer start H"			[ stateTopic="homie/5ccf7fb97572/operation-mode/timer-start-h", commandTopic="homie/5ccf7fb97572/operation-mode/timer-start-h/set"]
+				Type number : timerStartM	 		"Timer start Min"		[ stateTopic="homie/5ccf7fb97572/operation-mode/timer-start-min", commandTopic="homie/5ccf7fb97572/operation-mode/timer-start-min/set"]
+				Type number : timerEndH	 			"Timer end H"				[ stateTopic="homie/5ccf7fb97572/operation-mode/timer-end-h", commandTopic="homie/5ccf7fb97572/operation-mode/timer-end-h/set"]
+				Type number : timerEndM	 			"Timer end Min"			[ stateTopic="homie/5ccf7fb97572/operation-mode/timer-end-min", commandTopic="homie/5ccf7fb97572/operation-mode/timer-end-min/set"]
+
+				//Solar Pump
+				Type switch : solarPumpSwitch	"Solar Pumpe" 			[ stateTopic="homie/5ccf7fb97572/solar-pump/switch", commandTopic="homie/5ccf7fb97572/solar-pump/switch/set", on="true", off="false" ]
+				Type switch : poolPumpSwitch	"pool Pumpe" 				[ stateTopic="homie/5ccf7fb97572/pool-pump/switch", commandTopic="homie/5ccf7fb97572/pool-pump/switch/set", on="true", off="false" ]
+
+				Type number : solarTemp 			"Solar Temperatur" 	[ stateTopic="homie/5ccf7fb97572/solar-temp/temperature"]
+				Type number : poolTemp 				"Pool Temperatur" 	[ stateTopic="homie/5ccf7fb97572/pool-temp/temperature"]
+
+
+				//Device properties
+				Type string : controllerName	"Device Name"				[ stateTopic="homie/5ccf7fb97572/$name"]
+				Type string : controllerMac		"MAC"								[ stateTopic="homie/5ccf7fb97572/$mac"]
+				Type string : controllerIp		"IP"								[ stateTopic="homie/5ccf7fb97572/$localip"]
+
+				Type number : controllerSignal "Signal"						[ stateTopic="homie/5ccf7fb97572/$stats/signal"]
+				Type number : controllerUptime "Uptime"						[ stateTopic="homie/5ccf7fb97572/$stats/uptime"]
+
+				Type string : controllerOnline "Online"						[ stateTopic="homie/5ccf7fb97572/$state"]
+
+				Type string : fwName 		"FW Name"									[ stateTopic="homie/5ccf7fb97572/$fw/name"]
+				Type string : fwVersion "FW Version"							[ stateTopic="homie/5ccf7fb97572/$fw/version"]
+
+				Type string : config 	"Config JSON"								[ stateTopic="homie/5ccf7fb97572/$implementation/config"]
+				Type string : ota 		"OTA Enabled"								[ stateTopic="homie/5ccf7fb97572/$implementation/ota/enabled"]
+		}
+}

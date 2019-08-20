@@ -1,0 +1,74 @@
+
+// ---- Group Definitions ----------------------------------------------------------------------------------------------
+Group gPool_Controller "Pool Controller" <swimmingpool> (gPool)
+Group gPool_Controller_properties
+
+Group Chart_Pool_Controller_Switch
+Group Chart_Pool_Controller_Temperature
+Group Chart_Pool_Controller_Mode
+
+// ---- Item Properties ------------------------------------------------------------------------------------------------
+String Pool_Controller_name "Device Name [%s]" <keyring> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerName" }
+String Pool_Controller_mac "MAC [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerMac" }
+String Pool_Controller_ip "IP [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerIp" }
+
+Number Pool_Controller_signal "Signal [%.1f%%]" <network> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerSignal" }
+Number Pool_Controller_uptime "Uptime [JS(uptime.js):%s]" <time> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerUptime" }
+
+String Pool_Controller_online "Online [%s]" <poweroutlet_us> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerOnline" }
+
+String Pool_Controller_fw_name "FW Name [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:fwName" }
+String Pool_Controller_fw_version "FW Version [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:fwVersion" }
+
+String Pool_Controller_current_config "Config JSON [%s]" <settings> (gPool_Controller, gPool_Controller_properties) { autoupdate="false",channel="mqtt:topic:mosquitto:pool-controller:config" }
+String Pool_Controller_ota_enabled "OTA Enabled [%s]" <wind> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:ota" }
+
+
+
+String Pool_Controller_OperationMode_Mode "Modus" <settings> (gPool_Controller, Chart_Pool_Controller_Mode) { autoupdate="true",	channel="mqtt:topic:mosquitto:pool-controller:operationMode"}
+
+Number Pool_Controller_MaxPoolTemp 		"max. Pool Temp. [%.1f °C]" <heating> (gPool_Controller, gTemperature) { autoupdate="true", channel="mqtt:topic:mosquitto:pool-controller:maxPoolTemp"}
+Number Pool_Controller_MinSolarTemp 	"min. Solar Temp. [%.1f °C]" <heating> (gPool_Controller, gTemperature) { autoupdate="true", channel="mqtt:topic:mosquitto:pool-controller:minSolarTemp"}
+Number Pool_Controller_Hysteresis 		"Hysterese [%.1f K]" <heating> (gPool_Controller, gTemperature) { autoupdate="true", channel="mqtt:topic:mosquitto:pool-controller:hysteresis"}
+
+Number Pool_Controller_Pool_Valve_Start_H	"HH: ein [%.0f h]" (gPool_Controller) { channel="mqtt:topic:mosquitto:pool-controller:timerStartH", autoupdate="true"}
+Number Pool_Controller_Pool_Valve_Start_M	"MM: ein [%.0f m]" (gPool_Controller) { channel="mqtt:topic:mosquitto:pool-controller:timerStartM", autoupdate="true"}
+Number Pool_Controller_Pool_Valve_Stop_H	"HH: aus [%.0f h]" (gPool_Controller) { channel="mqtt:topic:mosquitto:pool-controller:timerEndH", autoupdate="true"}
+Number Pool_Controller_Pool_Valve_Stop_M	"MM: aus [%.0f m]" (gPool_Controller) { channel="mqtt:topic:mosquitto:pool-controller:timerEndM", autoupdate="true"}
+
+Switch Pool_Controller_PoolPump_Switch "Pool Pumpe"
+	(gPool_Controller, gSwitch, Chart_Pool_Controller_Switch)
+	{
+		channel="mqtt:topic:mosquitto:pool-controller:poolPumpSwitch",
+		autoupdate="false"
+	}
+
+Switch Pool_Controller_SolarPump_Switch "Solar Pumpe"
+	(gPool_Controller, gSwitch, Chart_Pool_Controller_Switch)
+	{
+		channel="mqtt:topic:mosquitto:pool-controller:solarPumpSwitch",
+		autoupdate="false"
+	}
+
+Number Pool_Controller_PoolTemp_Temperature "Pool Temperatur [%.1f °C]" <temperature>
+	(gPool_Controller, gTemperature, Chart_Pool_Controller_Temperature)
+	["CurrentTemperature", "object:wasser"]
+	{
+		channel="mqtt:topic:mosquitto:pool-controller:poolTemp",
+		alexa="TemperatureSensor.temperature",
+		autoupdate="false"
+	}
+
+Number Pool_Controller_SolarTemp_Temperature "Solar Temperatur [%.1f °C]"
+	(gPool_Controller, gTemperature, Chart_Pool_Controller_Temperature)
+	["CurrentTemperature", "object:solar"]
+	{
+		channel="mqtt:topic:mosquitto:pool-controller:solarTemp",
+		alexa="TemperatureSensor.temperature",
+		autoupdate="false"
+	}
+
+
+//updated by rule
+DateTime    Pool_Controller_Last_Update_DateTime    "Last Update [%1$tm.%1$td.%1$tY %1$tr]"
+

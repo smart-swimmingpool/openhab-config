@@ -1,0 +1,10 @@
+//------------------------------------------------------------------------
+// saves Timestamp of last update from temp sensors.
+//------------------------------------------------------------------------
+rule "Last Temperature Timestamp"
+when
+	Item Pool_Controller_PoolTemp_Temperature received update or
+	Item Pool_Controller_SolarTemp_Temperature received update
+then
+	Pool_Controller_Last_Update_DateTime.postUpdate(new DateTimeType())
+end
