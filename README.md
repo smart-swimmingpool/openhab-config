@@ -9,7 +9,7 @@ an MQTT broker in your environment.
 
 ## Raspberry Pi
 
-I use an Raspberry Pi (Model 3) for smarthome server with installed [openHAB](https://www.openhab.org/docs/installation/rasppi.html). The latest version of openHAB has an embedded MQTT broker. In this example a seperate broker [Mosquitto](https://mosquitto.org/) on same Raspberry Pi is configured.
+I use an Raspberry Pi (Model 3) ([Amazon](https://amzn.to/2NnqwDQ)). The latest version of openHAB has an embedded MQTT broker. In this example a seperate broker [Mosquitto](https://mosquitto.org/) on same Raspberry Pi is configured.
 
 ### Install Mosquitto
 
