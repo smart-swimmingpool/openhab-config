@@ -6,6 +6,17 @@ Configuration example to use the [Smart Swimming Pool system](https://smart-swim
 
 Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](https://github.com/smart-swimmingpool/openhab-config)
 
+# Features
+
+[x] Switch Modes: Auto, Manual, Boost, Timer
+[x] Monitor current temparature of pool water and solar heating
+[x] Configuration of
+    - start and end time of cleaning circulation time
+    - max. temparature of pool water
+    - min temparature of solar heating 
+    - hystesis
+[x] Compatible with Alexa openHAB Add-on
+
 # Mobile App (openHAB iOS)
 
 | openHAB Pool Automation: overview            |
