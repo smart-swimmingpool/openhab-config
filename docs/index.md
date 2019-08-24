@@ -19,21 +19,18 @@ Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](ht
 
 # Mobile App (openHAB iOS)
 
-| openHAB Pool Automation: overview            |
-|----------------------------------------------|
-| <img alt="openHAB Pool Automation overview" src="openhab-pool-automation-overview.png"  width="220">  |
+This configuration running on openHAB iOS App:
 
-| openHAB Pool Automation: Temparature         |
-|----------------------------------------------|
-| <img alt="openHAB Pool Automation temperature" src="openhab-pool-automation-temparature.png"  width="220"> |
+| openHAB Pool Automation: Overview            | openHAB Pool Automation: Temparature         |
+|----------------------------------------------|----------------------------------------------|
+| <img alt="openHAB Pool Automation overview" src="openhab-pool-automation-overview.png"  width="220">  | <img alt="openHAB Pool Automation temperature" src="openhab-pool-automation-temparature.png"  width="220"> |
 
-| openHAB Pool Automation: Settings            |
-|----------------------------------------------|
-| <img alt="openHAB Pool Automation settings" src="openhab-pool-automation-settings-1.png" width="220"> |
 
-| openHAB Pool Automation: Settings            |
-|----------------------------------------------|
-| <img alt="openHAB Pool Automation settings" src="openhab-pool-automation-settings-2.png" width="220"> |
+| openHAB Pool Automation: Settings            | openHAB Pool Automation: Settings            |
+|----------------------------------------------|----------------------------------------------|
+| <img alt="openHAB Pool Automation settings" src="openhab-pool-automation-settings-1.png" width="220"> | <img alt="openHAB Pool Automation settings" src="openhab-pool-automation-settings-2.png" width="220"> |
+
+
 
 # Precondition
 
