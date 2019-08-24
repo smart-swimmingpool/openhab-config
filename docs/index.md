@@ -8,15 +8,18 @@ Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](ht
 
 # Mobile App (openHAB iOS)
 
-| Overview |  Temperature Chart |
-: ---------:--------------------:
-| ![openHAB Pool Automation overview](openhab-pool-automation-overview.png) | ![openHAB Pool Automation temperature](openhab-pool-automation-temparature.png) |
+<img alt="openHAB Pool Automation overview" 
+    src="openhab-pool-automation-overview.png"  
+    width="400"> 
+<img alt="openHAB Pool Automation temperature" src="openhab-pool-automation-temparature.png" 
+    width="400"> 
 
-| Settings | Settings |
-:----------:----------:
-| ![openHAB Pool Automation settings](openhab-pool-automation-settings-1.png) | ![openHAB Pool Automation settings](openhab-pool-automation-settings-2.png) |
-
-
+<img alt="openHAB Pool Automation settings"
+  src="openhab-pool-automation-settings-1.png" 
+  width="400"> 
+<img alt="openHAB Pool Automation settings"
+  src="openhab-pool-automation-settings-2.png" 
+  width="400"> 
 
 # Precondition
 
