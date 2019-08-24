@@ -8,14 +8,14 @@ Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](ht
 
 # Features
 
-[x] Switch Modes: Auto, Manual, Boost, Timer
-[x] Monitor current temparature of pool water and solar heating
-[x] Configuration of
+- [x] Switch Modes: Auto, Manual, Boost, Timer
+- [x] Monitor current temparature of pool water and solar heating
+- [x] Configuration of
     - start and end time of cleaning circulation time
     - max. temparature of pool water
     - min temparature of solar heating 
     - hystesis
-[x] Compatible with Alexa openHAB Add-on
+- [x] Compatible with Alexa openHAB Add-on
 
 # OpenHAB BasicUI Sitemap
 
