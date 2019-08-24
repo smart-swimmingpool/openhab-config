@@ -7,6 +7,7 @@ Configuration example to use the Smart Swimming Pool system on openHAB
 Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](https://github.com/smart-swimmingpool/openhab-config)
 
 # Mobile App (openHAB iOS)
+
 | openHAB Pool Automation: overview            |
 |----------------------------------------------|
 | <img alt="openHAB Pool Automation overview" src="openhab-pool-automation-overview.png"  width="220">  |
