@@ -17,6 +17,12 @@ Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](ht
     - hystesis
 [x] Compatible with Alexa openHAB Add-on
 
+# OpenHAB BasicUI Sitemap
+
+| openHAB Pool Automation: Overview            | openHAB Pool Automation: Settings         |
+|----------------------------------------------|----------------------------------------------|
+| <img alt="openHAB Pool Automation overview" src="openhab-basicui-overview.png"  width="220">  | <img alt="openHAB Pool Automation temperature" src="openhab-basicui-settings.png"  width="220"> |
+
 # Mobile App (openHAB iOS)
 
 This configuration running on openHAB iOS App:
