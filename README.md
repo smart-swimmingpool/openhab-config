@@ -22,4 +22,6 @@ I use an Raspberry Pi (Model 3) ([Amazon](https://amzn.to/2NnqwDQ)). The latest 
 - In Paper UI install add-on 'MQTT Binding' from bindings.
 - Check `services/mqtt.cfg` for your environment.
 
+# Documentation
 
+see also at [https://smart-swimmingpool.github.io/openhab-config/](https://smart-swimmingpool.github.io/openhab-config/)
