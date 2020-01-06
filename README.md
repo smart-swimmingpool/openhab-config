@@ -24,4 +24,4 @@ I use an Raspberry Pi (Model 3) ([Amazon](https://amzn.to/2NnqwDQ)). The latest 
 
 # Documentation
 
-see also at [https://smart-swimmingpool.github.io/openhab-config/](https://smart-swimmingpool.github.io/openhab-config/)
+see at [https://smart-swimmingpool.github.io/openhab-config/](https://smart-swimmingpool.github.io/openhab-config/)
