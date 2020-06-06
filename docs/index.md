@@ -6,7 +6,7 @@ Configuration example to use the [Smart Swimming Pool system](https://smart-swim
 
 Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](https://github.com/smart-swimmingpool/openhab-config)
 
-# Features
+## Features
 
 - [x] Switch Modes: Auto, Manual, Boost, Timer
 - [x] Monitor current temparature of pool water and solar heating
@@ -17,13 +17,13 @@ Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](ht
     - hystesis
 - [x] Compatible with Alexa openHAB Add-on
 
-# OpenHAB BasicUI Sitemap
+## OpenHAB BasicUI Sitemap
 
 | openHAB Pool Automation: Overview            | openHAB Pool Automation: Settings         |
 |----------------------------------------------|----------------------------------------------|
 | <img alt="openHAB Pool Automation overview" src="openhab-basicui-overview.png"  width="220">  | <img alt="openHAB Pool Automation temperature" src="openhab-basicui-settings.png"  width="220"> |
 
-# Mobile App (openHAB iOS)
+## Mobile App (openHAB iOS)
 
 This configuration running on openHAB iOS App:
 
@@ -38,16 +38,16 @@ This configuration running on openHAB iOS App:
 
 
 
-# Precondition
+## Precondition
 
 The Smart Swimming Pool project uses Homie 3.0 based MQTT messaging. Therfor you have to install 
 an MQTT broker in your environment.
 
-## Raspberry Pi
+### Raspberry Pi
 
 I use an Raspberry Pi (Model 3) ([Amazon](https://amzn.to/2NnqwDQ)). The latest version of openHAB has an embedded MQTT broker. In this example a seperate broker [Mosquitto](https://mosquitto.org/) on same Raspberry Pi is configured.
 
-## Install Mosquitto
+### Install Mosquitto
 
 - Install Mosquitto on Raspberry Pi:
   ``` 
