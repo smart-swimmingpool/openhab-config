@@ -1,8 +1,6 @@
 # OpenHAB Configuration | 🏊 Smart Swimmingpool 
 
-**🏊 The Homie 3.0 compatible Smart Swimmingpool Controller 🎛️**
-
-Configuration example to use the [Smart Swimming Pool system](https://smart-swimmingpool.github.io/smart-swimmingpool/) on openHAB.
+Configuration example to use the [Smart Swimming Pool system](https://smart-swimmingpool.github.io/) on openHAB.
 
 Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](https://github.com/smart-swimmingpool/openhab-config)
 
