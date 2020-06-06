@@ -11,9 +11,9 @@ tags: ["docs", "openHAB", "tutorial"]
 
 menu:
   docs:
-    parent: Documents
-    name: OpenHAB
-    weight: 10
+    parent: OpenHAB
+    name: Configuration
+    weight: 30
 ---
 
 <span style="text-shadow: none;">
