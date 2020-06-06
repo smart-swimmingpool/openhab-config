@@ -1,8 +1,29 @@
-# OpenHAB Configuration | 🏊 Smart Swimmingpool 
+---
+title: OpenHAB Configuration | 🏊 Smart Swimmingpool 
+date: "2020-05-28"
+lastmod: "2020-06-02"
+draft: false
+toc: true
+type: docs
+featured: true
 
-Configuration example to use the [Smart Swimming Pool system](https://smart-swimmingpool.github.io/) on openHAB.
+tags: ["docs", "openHAB", "tutorial"]
 
-Configuration sources: [https://github.com/smart-swimmingpool/openhab-config](https://github.com/smart-swimmingpool/openhab-config)
+menu:
+  docs:
+    parent: Documents
+    name: OpenHAB
+    weight: 10
+---
+
+<span style="text-shadow: none;">
+<a class="github-button" href="https://github.com/smart-swimmingpool/openhab-config/subscription" data-size="large" data-show-count="true" aria-label="Watch smart-swimmingpool/openhab-config on GitHub">Watch</a>
+<a class="github-button" href="https://github.com/smart-swimmingpool/openhab-config" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script>
+
+[GitHub Project](https://github.com/smart-swimmingpool/openhab-config)
+</span>
+
+Configuration example to use the Smart Swimming Pool system on openHAB.
 
 ## Features
 
