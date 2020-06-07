@@ -1,5 +1,5 @@
 ---
-title: OpenHAB Configuration | 🏊 Smart Swimmingpool 
+title: OpenHAB Configuration
 date: "2020-05-28"
 lastmod: "2020-06-02"
 draft: false
