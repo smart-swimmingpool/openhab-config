@@ -1,5 +1,7 @@
 # OpenHAB Configuration | 🏊 Smart Swimming Pool
 
+[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/smart-swimming-pool)
+
 Configuration example to use the Smart Swimming Pool system on openHAB.
 
 ## Precondition
