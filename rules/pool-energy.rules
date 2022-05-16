@@ -1,0 +1,57 @@
+configuration: {}
+triggers:
+  - id: "1"
+    configuration:
+      cronExpression: 0 * * * * ? *
+    type: timer.GenericCronTrigger
+conditions: []
+actions:
+  - inputs: {}
+    id: "2"
+    configuration:
+      type: application/javascript
+      script: >-
+        'use strict'
+
+
+        var poolTempItem = itemRegistry.getItem('PoolController_Pool_2Dtemp_Temperature') //item sending temperature of pool
+        var poolSize = 18000 //Liter water in pool
+
+
+        var logger = Java.type('org.slf4j.LoggerFactory').getLogger('org.openhab.rule.' + ctx.ruleUID)
+
+
+        var QuantityType = (this.QuantityType === undefined) ? Java.type("org.openhab.core.types.QuantityType") : this.QuantityType
+
+        var PersistenceExtensions = Java.type("org.openhab.core.persistence.extensions.PersistenceExtensions")
+
+        var ZonedDateTime = Java.type("java.time.ZonedDateTime")
+
+
+        var now = new Date()
+
+        var sinceDate = ZonedDateTime.now().minusHours(1)
+
+
+        var historicTempItem = PersistenceExtensions.historicState(poolTempItem, sinceDate)
+
+        var energyUnit = new QuantityType("0 kWh")
+
+
+        if (historicTempItem != null) {
+          
+          var currTemp = poolTempItem.getState()
+          var historicTemp = historicTempItem.getState()
+          var deltaTemp = new QuantityType( currTemp - historicTemp + " K")
+          
+          if (deltaTemp > 0) {
+            // 1grad pro 1000l ~1.162kWh
+            var energyUnit =  deltaTemp * poolSize * 1.162 / 1000 
+            energyUnit = new QuantityType(energyUnit + " kWh")
+            logger.info('aktuelle Temp: ' + currTemp + ' vor einer Stunde: ' + historicTemp + '-> delta: ' + deltaTemp + ' Energie: ' + energyUnit)
+          }
+        }
+
+
+        events.postUpdate("PoolController_Energy", energyUnit);
+    type: script.ScriptAction
