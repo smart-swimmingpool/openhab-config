@@ -14,8 +14,9 @@ actions:
         'use strict'
 
 
-        var poolTempItem = itemRegistry.getItem('PoolController_Pool_2Dtemp_Temperature') //item sending temperature of pool
-        var poolSize = 18000 //Liter water in pool
+        var poolTempItem = itemRegistry.getItem('PoolController_Pool_2Dtemp_Temperature')
+
+        var poolSize = 18000 //Liter
 
 
         var logger = Java.type('org.slf4j.LoggerFactory').getLogger('org.openhab.rule.' + ctx.ruleUID)
@@ -44,11 +45,14 @@ actions:
           var historicTemp = historicTempItem.getState()
           var deltaTemp = new QuantityType( currTemp - historicTemp + " K")
           
-          if (deltaTemp > 0) {
+          if (deltaTemp >= 0) {
             // 1grad pro 1000l ~1.162kWh
-            var energyUnit =  deltaTemp * poolSize * 1.162 / 1000 
-            energyUnit = new QuantityType(energyUnit + " kWh")
-            logger.info('aktuelle Temp: ' + currTemp + ' vor einer Stunde: ' + historicTemp + '-> delta: ' + deltaTemp + ' Energie: ' + energyUnit)
+            var energy =  deltaTemp * poolSize * 1.162 / 1000 
+            energy = Math.round(energy * 100) / 100
+            var energyUnit = new QuantityType(energy + " kWh")
+            logger.info('current Temp: ' + currTemp + ' an hour ago: ' + historicTemp + '-> delta: ' + deltaTemp + ' Energy: ' + energyUnit)
+          } else {
+            var energyUnit = new QuantityType("- kWh")
           }
         }
 
