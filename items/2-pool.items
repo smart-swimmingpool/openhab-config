@@ -8,10 +8,6 @@ Group Chart_Pool_Controller_Temperature
 Group Chart_Pool_Controller_Mode
 
 // ---- Item Properties ------------------------------------------------------------------------------------------------
-String Pool_Controller_name "Device Name [%s]" <keyring> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerName" }
-String Pool_Controller_mac "MAC [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerMac" }
-String Pool_Controller_ip "IP [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerIp" }
-
 Number Pool_Controller_signal "Signal [%.1f%%]" <network> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerSignal" }
 Number Pool_Controller_uptime "Uptime [JS(uptime.js):%s]" <time> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:controllerUptime" }
 
@@ -19,9 +15,6 @@ String Pool_Controller_online "Online [%s]" <poweroutlet_us> (gPool_Controller, 
 
 String Pool_Controller_fw_name "FW Name [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:fwName" }
 String Pool_Controller_fw_version "FW Version [%s]" <text> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:fwVersion" }
-
-String Pool_Controller_current_config "Config JSON [%s]" <settings> (gPool_Controller, gPool_Controller_properties) { autoupdate="false",channel="mqtt:topic:mosquitto:pool-controller:config" }
-String Pool_Controller_ota_enabled "OTA Enabled [%s]" <wind> (gPool_Controller, gPool_Controller_properties) { autoupdate="false", channel="mqtt:topic:mosquitto:pool-controller:ota" }
 
 
 
