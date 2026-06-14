@@ -2,7 +2,18 @@
 
 Discussions: <https://github.com/smart-swimmingpool/smart-swimmingpool.github.io/discussions>
 
+> ⚠️ **Legacy notice**: [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery)
+> is now the **primary** integration path for the Pool Controller (v3.x).
+> openHAB remains fully supported via MQTT but requires manual configuration.
+
 Configuration example to use the Smart Swimming Pool system on openHAB.
+
+## Compatibility
+
+| Controller Version | Home Assistant | openHAB |
+|-------------------|---------------|---------|
+| **2.x** | Limited support | Recommended |
+| **3.x** | Native MQTT Discovery | Manual MQTT configuration |
 
 ## Precondition
 
