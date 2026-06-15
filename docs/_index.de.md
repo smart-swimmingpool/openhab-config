@@ -1,7 +1,7 @@
 ---
 title: OpenHAB Konfiguration
 date: "2020-05-28"
-lastmod: "2020-06-02"
+lastmod: "2026-06-14"
 draft: false
 toc: true
 type: docs
@@ -23,7 +23,19 @@ menu:
 [GitHub Project](https://github.com/smart-swimmingpool/openhab-config)
 </span>
 
+> ⚠️ **Legacy-Hinweis**: [Home Assistant MQTT Discovery](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery)
+> (via `mqtt-protocol = "homeassistant"` am Controller) ist heute der **primäre** Integrationspfad.
+> openHAB wird weiterhin vollständig über MQTT unterstützt, erfordert aber manuelle Konfiguration.
+> Siehe die [Kompatibilitätsmatrix](#kompatibilitätsmatrix) unten.
+
 Configuration example to use the Smart Swimming Pool system on openHAB.
+
+## Kompatibilitätsmatrix
+
+| Controller-Version | Home Assistant | openHAB |
+|-------------------|---------------|---------|
+| **2.x** | Eingeschränkt | Empfohlen |
+| **3.x** | Nativer MQTT Discovery | Manuelle MQTT-Konfiguration |
 
 ## Features
 
