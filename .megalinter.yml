@@ -37,7 +37,7 @@ disable:
 
 # Exclude patterns
 filter_regex_exclude:
-  - .*/(\\.github)/.*
+  - '.*(\.github)/.*'
 
 # Don't treat warnings as errors
 warnings_as_errors: false
