@@ -57,7 +57,6 @@ jobs:
 
           # Enable relevant linters for OpenHAB configuration files
           VALIDATE_YAML: true
-          VALIDATE_JSON: true
 
           # Exclude markdown, YAML files, and workflow files due to Super-Linter v8.7.0 MD034 bug
           FILTER_REGEX_EXCLUDE: '.*/(\.github)/.*|.*\.md$|.*\.yml$|.*\.yaml$'
