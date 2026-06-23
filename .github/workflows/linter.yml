@@ -50,22 +50,19 @@ jobs:
       - name: Run MegaLinter
         uses: oxsecurity/megalinter@v7
         env:
-          # MegaLinter configuration
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-          # Enable relevant linters for OpenHAB config (YAML/JSON)
-          ENABLE: YAML,JSON,EDITORCONFIG
+          # Validate YAML, JSON, and EditorConfig files
+          VALIDATE_YAML: true
+          VALIDATE_JSON: true
+          VALIDATE_EDITORCONFIG: true
 
-          # Disable others
-          DISABLE: BASH,CLANG_FORMAT,CLANG_TIDY,COPYPASTE,CPP,DOCKERFILE,GO,GROOVY,HTML,JAVA,JAVASCRIPT,KOTLIN,MARKDOWN,OPENAPI,PERL,PHP,PYTHON,RUBY,RUST,SCALA,SHELL,SQL,TERRAFORM,TSQL,XML
-
-          # Exclude workflow files and YAML/JSON files (to avoid false positives)
-          FILTER_REGEX_EXCLUDE: ".*/(\.github)/.*|.*\.(yml|yaml|json)$"
+          # Exclude workflow files
+          FILTER_REGEX_EXCLUDE: ".*/(\.github)/.*"
 
           # Don't treat warnings as errors
           WARNINGS_AS_ERRORS: false
 
-          # Logging
           LOG_LEVEL: NOTICE
