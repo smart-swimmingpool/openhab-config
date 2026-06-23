@@ -62,7 +62,7 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: true
           VALIDATE_EDITORCONFIG: true
 
-          # Exclude markdown files due to Super-Linter v8.7.0 MD034 bug
+          # Exclude markdown and YAML files due to Super-Linter v8.7.0 MD034 bug
           FILTER_REGEX_EXCLUDE: '.*\.md$|.*\.yml$|.*\.yaml$'
 
           # Markdown specific settings - increase line length to 130
