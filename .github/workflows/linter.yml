@@ -60,7 +60,7 @@ jobs:
           VALIDATE_EDITORCONFIG: true
 
           # Exclude workflow files
-          FILTER_REGEX_EXCLUDE: ".*/(\.github)/.*"
+          FILTER_REGEX_EXCLUDE: ".*/(\\.github)/.*"
 
           # Don't treat warnings as errors
           WARNINGS_AS_ERRORS: false
