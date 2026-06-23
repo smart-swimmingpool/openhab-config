@@ -2,38 +2,12 @@
 # MegaLinter configuration file
 # https://megalinter.github.io/configuration/
 
-# Enable/disable linters
+# Enable only YAML and JSON linters
 enable:
   - JSON
   - YAML
-  - EDITORCONFIG
 
-disable:
-  - BASH
-  - CLANG_FORMAT
-  - CLANG_TIDY
-  - COPYPASTE
-  - CPP
-  - DOCKERFILE
-  - GO
-  - GROOVY
-  - HTML
-  - JAVA
-  - JAVASCRIPT
-  - KOTLIN
-  - MARKDOWN
-  - OPENAPI
-  - PERL
-  - PHP
-  - PYTHON
-  - RUBY
-  - RUST
-  - SCALA
-  - SHELL
-  - SQL
-  - TERRAFORM
-  - TSQL
-  - XML
+disable_all: true
 
 # Exclude patterns
 filter_regex_exclude:
