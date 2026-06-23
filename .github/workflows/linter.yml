@@ -56,10 +56,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           # Enable relevant linters for OpenHAB configuration files
-          VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true
           VALIDATE_JSON: true
-          VALIDATE_GITHUB_ACTIONS: true
 
           # Exclude markdown and YAML files due to Super-Linter v8.7.0 MD034 bug
           FILTER_REGEX_EXCLUDE: '.*\.md$|.*\.yml$|.*\.yaml$'
